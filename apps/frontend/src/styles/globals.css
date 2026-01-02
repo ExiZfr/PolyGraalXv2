@@ -4,139 +4,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============================
-   CSS Variables
-   ============================ */
-:root {
-  --color-bg-primary: #0f172a;
-  --color-bg-secondary: #1e293b;
-  --color-bg-tertiary: #334155;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
-  --color-accent: #0ea5e9;
-  --color-long: #22c55e;
-  --color-short: #ef4444;
-}
-
-/* ============================
-   Base Styles
-   ============================ */
 @layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
   html {
     @apply scroll-smooth antialiased;
   }
-  
+
   body {
-    @apply bg-dark-900 text-gray-100 font-sans min-h-screen;
-    background: linear-gradient(135deg, #0f172a 0%, #1e1e2e 50%, #0f172a 100%);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-dark-800;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-dark-600 rounded-full;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-dark-500;
+    @apply bg-zinc-950 text-zinc-50 font-sans min-h-screen selection:bg-primary-500/30 selection:text-primary-200 overflow-x-hidden;
   }
 }
 
-/* ============================
-   Component Styles
-   ============================ */
-@layer components {
-  /* Trading Card */
-  .trading-card {
-    @apply bg-dark-800/80 backdrop-blur-sm border border-dark-700 rounded-xl p-4;
-  }
-  
-  /* Button variants */
-  .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200;
-  }
-  
-  .btn-long {
-    @apply bg-long hover:bg-long-dark text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200;
-  }
-  
-  .btn-short {
-    @apply bg-short hover:bg-short-dark text-white font-medium px-4 py-2 rounded-lg transition-colors duration-200;
-  }
-  
-  /* Input styles */
-  .input-field {
-    @apply w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
-  }
-  
-  /* Price display */
-  .price-up {
-    @apply text-long animate-pulse;
-  }
-  
-  .price-down {
-    @apply text-short animate-pulse;
-  }
-  
-  /* Order book rows */
-  .orderbook-row {
-    @apply hover:bg-dark-700/50 transition-colors duration-100 cursor-pointer;
-  }
-  
-  /* Glassmorphism */
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-  }
-}
-
-/* ============================
-   Utility Classes
-   ============================ */
 @layer utilities {
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+  .glass {
+    @apply bg-zinc-950/70 backdrop-blur-md border border-white/10;
   }
-  
-  /* Glow effects */
-  .glow-primary {
-    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+
+  .glass-card {
+    @apply bg-zinc-900/50 backdrop-blur-sm border border-white/5 hover:border-white/10 transition-colors duration-300;
   }
-  
-  .glow-long {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
   }
-  
-  .glow-short {
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+
+  .hero-mask {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
-  
-  /* Hide scrollbar */
-  .scrollbar-hide {
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
 }
 
-/* ============================
-   TradingView Chart Overrides
-   ============================ */
-.tv-lightweight-charts {
-  @apply rounded-lg overflow-hidden;
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-x-12 {
+  transform: rotateX(12deg);
 }

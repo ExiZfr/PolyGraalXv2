@@ -1,145 +1,62 @@
-import Link from 'next/link';
+'use client';
 
-/**
- * Site footer with SEO-friendly links
- */
+import Link from 'next/link';
+import { Github, Twitter, MessageSquare, Book } from 'lucide-react';
+
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-dark-900 border-t border-dark-700 py-12" role="contentinfo">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-                    {/* Product */}
-                    <div>
-                        <h3 className="font-semibold text-gray-100 mb-4">Product</h3>
-                        <nav aria-label="Product links">
-                            <ul className="space-y-2">
-                                <li>
-                                    <Link href="/trade/featured" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Trade
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/markets" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Markets
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/portfolio" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Portfolio
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+        <footer className="bg-zinc-950 border-t border-white/5 py-12 relative z-10">
+            <div className="container px-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    {/* Brand */}
+                    <div className="col-span-2 md:col-span-1">
+                        <Link href="/" className="text-2xl font-bold text-white mb-4 block">
+                            Poly<span className="text-primary-500">Bet</span>
+                        </Link>
+                        <p className="text-zinc-500 text-sm leading-relaxed">
+                            The premier decentralized exchange for prediction markets. Built on Polygon for speed and low fees.
+                        </p>
                     </div>
 
-                    {/* Resources */}
+                    {/* Links */}
                     <div>
-                        <h3 className="font-semibold text-gray-100 mb-4">Resources</h3>
-                        <nav aria-label="Resource links">
-                            <ul className="space-y-2">
-                                <li>
-                                    <a
-                                        href="https://docs.polygraalx.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-gray-200 transition-colors"
-                                    >
-                                        Documentation
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://github.com/polygraalx"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-gray-200 transition-colors"
-                                    >
-                                        GitHub
-                                    </a>
-                                </li>
-                                <li>
-                                    <Link href="/faq" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        FAQ
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        <h4 className="font-semibold text-white mb-4">Platform</h4>
+                        <ul className="space-y-2 text-sm text-zinc-400">
+                            <li><Link href="/markets" className="hover:text-primary-400">Markets</Link></li>
+                            <li><Link href="/portfolio" className="hover:text-primary-400">Portfolio</Link></li>
+                            <li><Link href="/leaderboard" className="hover:text-primary-400">Leaderboard</Link></li>
+                        </ul>
                     </div>
 
-                    {/* Legal */}
+                    {/* Support */}
                     <div>
-                        <h3 className="font-semibold text-gray-100 mb-4">Legal</h3>
-                        <nav aria-label="Legal links">
-                            <ul className="space-y-2">
-                                <li>
-                                    <Link href="/terms" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Terms of Service
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/privacy" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Privacy Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/disclaimer" className="text-gray-400 hover:text-gray-200 transition-colors">
-                                        Risk Disclaimer
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        <h4 className="font-semibold text-white mb-4">Support</h4>
+                        <ul className="space-y-2 text-sm text-zinc-400">
+                            <li><a href="#" className="hover:text-primary-400">Documentation</a></li>
+                            <li><a href="#" className="hover:text-primary-400">API Reference</a></li>
+                            <li><a href="#" className="hover:text-primary-400">Status</a></li>
+                        </ul>
                     </div>
 
-                    {/* Community */}
+                    {/* Social */}
                     <div>
-                        <h3 className="font-semibold text-gray-100 mb-4">Community</h3>
-                        <nav aria-label="Social links">
-                            <ul className="space-y-2">
-                                <li>
-                                    <a
-                                        href="https://twitter.com/polygraalx"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-gray-200 transition-colors"
-                                    >
-                                        Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://discord.gg/polygraalx"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-gray-200 transition-colors"
-                                    >
-                                        Discord
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://t.me/polygraalx"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-gray-200 transition-colors"
-                                    >
-                                        Telegram
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <h4 className="font-semibold text-white mb-4">Community</h4>
+                        <div className="flex gap-4">
+                            <a href="#" className="text-zinc-400 hover:text-white transition-colors"><Twitter size={20} /></a>
+                            <a href="#" className="text-zinc-400 hover:text-white transition-colors"><Github size={20} /></a>
+                            <a href="#" className="text-zinc-400 hover:text-white transition-colors"><MessageSquare size={20} /></a>
+                        </div>
                     </div>
                 </div>
 
-                {/* Bottom bar */}
-                <div className="pt-8 border-t border-dark-700 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 text-sm">
-                        © {currentYear} PolyGraalX. All rights reserved.
-                    </p>
-                    <p className="text-gray-500 text-sm">
-                        Built on <span className="text-primary-400">Polygon</span>
-                    </p>
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
+                    <p>© {currentYear} PolyBet Futures. All rights reserved.</p>
+                    <div className="flex gap-6">
+                        <Link href="/terms" className="hover:text-zinc-400">Terms</Link>
+                        <Link href="/privacy" className="hover:text-zinc-400">Privacy</Link>
+                    </div>
                 </div>
             </div>
         </footer>
