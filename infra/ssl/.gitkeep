@@ -1,0 +1,5 @@
+# SSL certificates placeholder
+# In production, use Let's Encrypt or your SSL provider
+# Place your certificate files here:
+# - fullchain.pem
+# - privkey.pem

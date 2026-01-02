@@ -1,0 +1,38 @@
+{
+    "extends": "@polygraalx/config/tsconfig/node.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "./*"
+            ],
+            "@config/*": [
+                "./config/*"
+            ],
+            "@api/*": [
+                "./api/*"
+            ],
+            "@indexer/*": [
+                "./indexer/*"
+            ],
+            "@services/*": [
+                "./services/*"
+            ],
+            "@db/*": [
+                "./db/*"
+            ],
+            "@websocket/*": [
+                "./websocket/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

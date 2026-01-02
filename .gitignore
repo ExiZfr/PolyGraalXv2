@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.next/
+out/
+build/
+coverage/
+
+# Foundry
+packages/contracts/out/
+packages/contracts/cache/
+packages/contracts/broadcast/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Turbo
+.turbo/
+
+# Docker volumes (local)
+.docker-data/
+
+# SSL certificates (generated)
+infra/ssl/*.pem
+infra/ssl/*.crt
+infra/ssl/*.key
+
+# Miscellaneous
+*.tsbuildinfo
+.eslintcache

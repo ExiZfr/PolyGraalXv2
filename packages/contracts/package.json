@@ -1,0 +1,16 @@
+{
+    "name": "@polygraalx/contracts",
+    "version": "0.1.0",
+    "private": true,
+    "description": "PolyGraalX Smart Contracts",
+    "scripts": {
+        "build": "forge build",
+        "test": "forge test",
+        "coverage": "forge coverage",
+        "deploy": "forge script script/Deploy.s.sol --broadcast",
+        "verify": "forge verify-contract"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0"
+    }
+}
